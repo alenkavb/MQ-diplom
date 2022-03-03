@@ -186,7 +186,7 @@
         <span class="author">Неизвестный автор</span>
       </div>
       <div class="about">
-        <p>Лето на носу, а сним и музыкальные фестивали. На каком же из них вы разобьете свою палатку?
+        <p class="paragraph">Лето на носу, а сним и музыкальные фестивали. На каком же из них вы разобьете свою палатку?
         </p>
         <p>Мы составили список лучших летних фестивалей по всему миру.</p>
       </div>
@@ -381,12 +381,16 @@
     </section>
   </aside>  
 </div>
-<div class="content">
-	<h2 class="trends-title">Наши изделия</h2>
+<div class="shop">
+	<h2 class="shop-title">Наши изделия</h2>
 	<div class="products">
     <article class="product">
       <div class="product-imgbox">
-        <img class="product-img" src="images/shop-item-desk1.jpg" alt="Подушка">
+      	<picture>
+			 <source srcset="images/shop-item-tablet1.jpg" media="(min-width: 641px) and (max-width: 1200px)">
+			 <source srcset="images/shop-item-mobile1.jpg" media="(max-width: 640px)">
+			 <img class="product-img" src="images/shop-item-desk1.jpg" alt="Подушка">
+			</picture>
       </div>
       <div class="product-body">
         
@@ -408,7 +412,11 @@
     </article>
   <article class="product">
       <div class="product-imgbox">
-        <img class="product-img" src="images/shop-item-desk2.jpg" alt="Зайка">
+      	<picture>
+			 <source srcset="images/shop-item-tablet2.jpg" media="(min-width: 641px) and (max-width: 1200px)">
+			 <source srcset="images/shop-item-mobile2.jpg" media="(max-width: 640px)">
+			 <img class="product-img" src="images/shop-item-desk2.jpg" alt="Зайка">
+			</picture>
       </div>
       <div class="product-body">
         
@@ -430,7 +438,11 @@
   </article>
   <article class="product">
       <div class="product-imgbox">
-        <img class="product-img" src="images/shop-item-desk3.jpg" alt="Рамка">
+      	<picture>
+			 <source srcset="images/shop-item-tablet3.jpg" media="(min-width: 641px) and (max-width: 1200px)">
+			 <source srcset="images/shop-item-mobile3.jpg" media="(max-width: 640px)">
+			 <img class="product-img" src="images/shop-item-desk3.jpg" alt="Рамка">
+			</picture>
       </div>
       <div class="product-body">
         
