@@ -120,11 +120,141 @@
 	display: none;
 }
 
+.popup {
+	position: fixed;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	z-index: 999;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.popup::after {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	background-color: #000;
+	opacity: 0.6;
+	z-index: -1;
+
+}
+
+.popup-contant {
+	width: 390px;
+	background-color: #ffffff;
+	padding: 30px;
+	position: relative;
+}
+
+.btn-close {
+	border: none;
+	padding: 0;
+	cursor: pointer;
+	position: absolute;
+	top: -24px;
+	right: 0;
+	width: 17px;
+	height: 17px;
+	background-image: url("../svg/form-x.svg");
+	background-repeat: no-repeat;
+	background-color: transparent;
+	background-size: 17px 17px;
+}
+
+.fidback {
+	margin-top: 25px;
+}
+
+.form {
+	margin-top: 30px;
+	margin-bottom: 25px;
+	font-family: "Open Sans", sans serif;
+	font-weight: 400;
+	font-size: 13px;
+	color: #000000;
+}
+.form-group:nth-child(n+2) {
+	margin-top: 30px;
+}
+.field-group {
+	display: block;
+}
+
+.select-field {
+	display: block;
+	width: 100%;
+	padding: 20px;
+	margin-top: 12px;
+	font-family: inherit;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	background-image: url("../svg/form-arrows.svg");
+	background-repeat: no-repeat;
+	background-position: right 15px center;
+	background-size: 8px 16px;
+}
+
+.radio-field {
+	display: inline-block;
+	margin-top: 15px;
+	margin-right: 15px;
+}
+
+.radio-field-text::before {
+	content: "";
+	display: inline-block;
+	width: 16px;
+	height: 16px;
+	background-image: url("../svg/form-empty-circle.svg");
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: 16px;
+	vertical-align: middle;
+	margin-right: 5px;
+}
+
+.radio:checked ~ .radio-field-text::before {
+	background-image: url("../svg/form-circle.svg");
+}
+
+.textarea {
+	width: 100%;
+	min-height: 131px;
+	resize: none;
+	background-color: #f4f7f6;
+	box-sizing: border-box;
+	border: none;
+	font-family: inherit;
+	padding: 20px;
+	margin-top: 12px;
+}
+
+.button {
+	width: 100%;
+	padding-top: 16px;
+	padding-bottom: 16px;
+	color: #ffffff;
+	font-size: 14px;
+	font-family: inherit;
+	font-weight: 700;
+	text-transform: uppercase;
+	border: none;
+	background-color:#b59f5b;
+	cursor: pointer;
+}
+
 .trends {
 	margin-top: 60px;
 }
 
-.trends-title, .shop-title {
+.trends-title, .shop-title, .popup-title {
 	font-size: 20px;
 	line-height: 29px;
 	color: #0f0d0e;
@@ -134,7 +264,7 @@
 	text-transform: uppercase;
 }
 
-.trends-title::after, .shop-title::after {
+.trends-title::after, .shop-title::after, .popup-title::after {
   content:"";
   display: block;
   margin-left: auto;
@@ -439,19 +569,19 @@
 
 .input-filed {
 	box-sizing: border-box;
-	padding: 16px 18px;
-	width: 270px;
 	font-size: 13px;
 	border: none;
 	background-color:#f4f7f6;
 }
 
 .search-field {
+	width: 270px;
 	padding: 16px 66px 16px 18px;
 }
 
-.search-field:focus, .subscribe-field:focus {
+.input-filed:focus, .textarea:focus {
 	border-bottom: 1px solid #b59f5b;
+	outline: none;
 }
 
 .search-button {
@@ -467,7 +597,7 @@
 	background-color:#b59f5b;
 }
 
-.search-button:hover, .subscribe-button:hover {
+.search-button:hover, .subscribe-button:hover, .button:hover {
 	background-color: #323232;
 }
 
@@ -799,7 +929,7 @@
 }
 
 .content, .shop {
-	max-width: /*690px*/ 1130px;
+	max-width: 1130px;
 	padding: 0 35px;
 	margin: 0 auto;
 }
@@ -846,8 +976,30 @@
 	line-height: 55px;
 }
 
+.popup-title {
+	font-size: 18px;
+}
+
+.btn-close {
+	width: 25px;
+	height: 25px;
+	background-size: 25px;
+	top: -35px;
+}
+
+.radio-field {
+	margin-right: 35px;
+}
+
+.radio-field-text::before {
+	content: "";
+	width: 25px;
+	height: 25px;
+	background-size: 25px;
+}
+
+
 .page {
-	/*max-width: /*698px*/;
 	margin-top: 50px;
 }
 
@@ -1132,6 +1284,38 @@
 	font-size: 26px;
 	line-height: 36px;
 	padding: 0;
+}
+
+.popup-contant {
+	width: 330px;
+	padding: 25px;
+}
+
+.btn-close {
+	top: -30px;
+	width: 25px;
+	height: 25px;
+	background-size: 25px 25px;
+}
+
+.fidback {
+	margin-top: 5px;
+}
+
+.form {
+	margin-top: 25px;
+	margin-bottom: 5px;
+}
+
+.radio-field {
+	margin-right: 35px;
+}
+
+.radio-field-text::before {
+	content: "";
+	width: 25px;
+	height: 25px;
+	background-size: 25px;
 }
 
 .page {
