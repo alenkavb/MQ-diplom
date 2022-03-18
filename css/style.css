@@ -124,8 +124,8 @@
 	position: fixed;
 	top: 0;
 	left: 0;
-	bottom: 0;
-	right: 0;
+	width: 100%;
+	height: 100%;
 	z-index: 999;
 
 	display: flex;
@@ -146,11 +146,16 @@
 
 }
 
-.popup-contant {
+.popup-body {
 	width: 390px;
+
+	position: relative;
+	padding: 24px 0 0 0;
+}
+
+.popup-contant {
 	background-color: #ffffff;
 	padding: 30px;
-	position: relative;
 }
 
 .btn-close {
@@ -158,7 +163,7 @@
 	padding: 0;
 	cursor: pointer;
 	position: absolute;
-	top: -24px;
+	top: 0;
 	right: 0;
 	width: 17px;
 	height: 17px;
@@ -558,7 +563,9 @@
 	width: 100%;
 }
 
-.search-group-field {}
+.search-group-field, .subscribe-group-field {
+	width: 100%;
+}
 
 .hidden {
 	width: 1px;
@@ -575,7 +582,7 @@
 }
 
 .search-field {
-	width: 270px;
+	width: 100%;
 	padding: 16px 66px 16px 18px;
 }
 
@@ -610,8 +617,12 @@
 	margin-bottom: 20px;
 }
 
-.subscribe-group-field {}
 .subscribe-group-button {}
+
+.subscribe-field {
+	width: 100%;
+	padding: 16px 18px;
+}
 
 .subscribe-button {
 	margin-top: 15px;
@@ -737,7 +748,6 @@
 	display: flex;
 	flex-direction: column;
 	outline: 3px solid #b59f5b;
-
 }
 
 .product-title {
@@ -821,7 +831,7 @@
 .footer {
 	height: 270px;
 	text-align: center;
-	box-sizing: border-box;
+	/*box-sizing: border-box;*/
 }
 
 .articles-socials {
@@ -896,12 +906,94 @@
 
 
 
+/*----------КОД ДЛЯ БЛОКА ТРЕНДОВ ДЛЯ ПЛАНШЕТОВ В ПЕЙЗАЖНОЙ ОРИЕНТАЦИИ------------*/
+
+
+@media (min-width: 641px) and (max-width: 1200px) and (orientation: landscape) {
+
+.trends {
+	margin-top: 50px;
+}
+
+.trends-title, .shop-title {
+	font-size: 18px;
+}
+
+.trends-wrapper {
+	margin-top: 15px;
+	min-width: 641px;
+	flex-wrap: wrap;
+}
+
+.trend-item {
+	width: calc(25% - 3px);
+}
+
+.trend-item:nth-child(n+2) {
+	margin-left: 2px;
+}
+
+.trend-content {
+	max-width: 340px;
+	margin: 0 18px 15px 18px;
+}
+
+.trend-item-title {
+	font-size: calc(0.33vw + 11px);
+	line-height: calc(0.5vw + 15px);
+}
+}
 
 
 
+/*----------КОД ДЛЯ БЛОКА ТРЕНДОВ ДЛЯ ПЛАНШЕТОВ В ПОРТРЕТНОЙ ОРИЕНТАЦИИ------------*/
 
 
+@media (min-width: 641px) and (max-width: 1200px) and (orientation: portrait) {
 
+.trends {
+	margin-top: 50px;
+}
+
+.trends-title, .shop-title {
+	font-size: 18px;
+}
+
+.trends-wrapper {
+	margin-top: 15px;
+	min-width: 641px;
+	flex-wrap: wrap;
+}
+
+.trend-item {
+	width: calc(50% - 1px);
+	height: 247px;
+}
+
+.trend-item:nth-child(2n+1) {
+	margin-left: 0;
+}
+
+.trend-item:nth-child(2n+2) {
+	margin-left: 2px;
+}
+
+.trend-item:nth-child(n+3) {
+	margin-top: 2px;
+}
+
+.trend-content {
+	max-width: 340px;
+}
+
+.trend-item-title {
+	font-size: 17px;
+	line-height: 22px;
+}
+}
+
+
+/*-------------КОД ДЛЯ ПЛАНШЕТОВ------------------*/
 
 
 @media (min-width: 641px) and (max-width: 1200px) {
@@ -929,7 +1021,7 @@
 }
 
 .content, .shop {
-	max-width: 1130px;
+	width: 100%;
 	padding: 0 35px;
 	margin: 0 auto;
 }
@@ -976,6 +1068,10 @@
 	line-height: 55px;
 }
 
+.popup-body {
+	padding: 35px 0 0 0;
+}
+
 .popup-title {
 	font-size: 18px;
 }
@@ -984,7 +1080,6 @@
 	width: 25px;
 	height: 25px;
 	background-size: 25px;
-	top: -35px;
 }
 
 .radio-field {
@@ -997,7 +1092,6 @@
 	height: 25px;
 	background-size: 25px;
 }
-
 
 .page {
 	margin-top: 50px;
@@ -1111,50 +1205,21 @@
 }
 
 .footer {
-	max-width: 698px;
 	height: 180px;
-	padding: 0 4.56%;
+	/*padding: 0 4.56%;*/
 }
 }
 
 
 
-@media (min-width: 641px) and (max-width: 1200px) and (orientation: landscape) {
-	.trends {
-	margin-top: 50px;
-}
-
-.trends-title, .shop-title {
-	font-size: 18px;
-}
-
-.trends-wrapper {
-	margin-top: 15px;
-	min-width: 641px;
-	flex-wrap: wrap;
-}
-
-.trend-item {
-	width: calc(25% - 3px);
-}
-
-.trend-item:nth-child(n+2) {
-	margin-left: 2px;
-}
-
-.trend-content {
-	max-width: 340px;
-}
-
-.trend-item-title {
-	font-size: 17px;
-	line-height: 22px;
-}
-}
 
 
 
-@media ((max-width: 640px) and (orientation: landscape)), ((min-width: 641px) and (max-width: 1200px) and (orientation: portrait)) {
+/*----------КОД ДЛЯ БЛОКА ТРЕНДОВ ДЛЯ МОБИЛОК В ПЕЙЗАЖНОЙ ОРИЕНТАЦИИ------------*/
+
+
+@media (max-width: 640px) and (orientation: landscape) {
+
 .trends {
 	margin-top: 50px;
 }
@@ -1199,6 +1264,50 @@
 
 
 
+/*----------КОД ДЛЯ БЛОКА ТРЕНДОВ ДЛЯ МОБИЛОК В ПОРТРЕТНОЙ ОРИЕНТАЦИИ------------*/
+
+
+@media (max-width: 640px) and (orientation: portrait) {
+.trends {
+	margin-top: 40px;
+}
+
+.trends-title, .shop-title {
+	font-size: 16px;
+}
+
+.trends-wrapper {
+	margin-top: 20px;
+	min-width: 290px;
+	flex-wrap: wrap;
+}
+
+.trend-item {
+	width: 100%;
+	height: 232px;
+	justify-content: none;
+	margin: 0 auto;
+}
+
+.trend-item:nth-child(n+2) {
+	margin-top: 2px;
+	margin-left: 0;
+}
+
+.trend-content {
+	width: 100%;
+	min-width: 290px;
+	padding: 30px 20px;
+}
+
+.trend-item-title {
+	font-size: 16px;
+	line-height: 20px;
+}
+}
+
+
+/*----------КОД ДЛЯ МОБИЛОК------------*/
 
 
 @media (max-width: 640px) {
@@ -1230,7 +1339,7 @@
 }
 
 .content {
-	max-width: 330px;
+	width: calc(100% - 30px);
 	display: flex;
 	flex-direction: column;
 	padding: 220px 15px 0px 15px;
@@ -1286,13 +1395,25 @@
 	padding: 0;
 }
 
+.popup {
+	/*margin: auto;*/
+	overflow-y: auto;
+	overflow-x: hidden;
+}
+
+.popup-body {
+	min-width: 320px;
+	height: 580px;
+	position: relative;
+	padding: 30px 0 0 0;
+}
+
 .popup-contant {
-	width: 330px;
+	box-sizing: border-box;
 	padding: 25px;
 }
 
 .btn-close {
-	top: -30px;
 	width: 25px;
 	height: 25px;
 	background-size: 25px 25px;
@@ -1320,9 +1441,9 @@
 
 .page {
 	flex-direction: column;
-	justify-content: none;
-	max-width: 360px;
-	padding: 40px 15px 0 15px;
+	/*flex: 1 1 auto;*/
+	padding: 40px 0 0 0;
+	margin: 0 15px 0 15px;
 }
 
 .main {
@@ -1378,6 +1499,9 @@
 
 .side-bar {
 	width: 100%;
+	display: flex;
+	flex-direction: column;
+	flex: 1 1 auto;
 	margin-top: 45px;
 	margin-bottom: 25px;
 }
@@ -1438,95 +1562,11 @@
 }
 
 .footer {
-	max-width: 100%;
+	flex:none;
 	height: 190px;
 	padding: 0 15px;
 }
-
-
-
-
-@media (max-width: 640px) and (orientation: portrait) {
-.trends {
-	margin-top: 40px;
-}
-
-.trends-title, .shop-title {
-	font-size: 16px;
-}
-
-.trends-wrapper {
-	margin-top: 20px;
-	min-width: 290px;
-	flex-wrap: wrap;
-}
-
-.trend-item {
-	width: 100%;
-	height: 232px;
-	justify-content: none;
-	margin: 0 auto;
-}
-
-.trend-item:nth-child(n+2) {
-	margin-top: 2px;
-	margin-left: 0;
-}
-
-.trend-content {
-	width: 100%;
-	max-width: 290px;
-	padding: 30px 20px;
-}
-
-.trend-item-title {
-	font-size: 16px;
-	line-height: 20px;
-}
 }
 
 
-/*@media (max-width: 640px) and (orientation: landscape) {
-	
-.trends {
-	margin-top: 40px;
-}
 
-.trends-title, .shop-title {
-	font-size: 16px;
-}
-
-.trends-wrapper {
-	margin-top: 20px;
-	min-width: 290px;
-	flex-wrap: wrap;
-}
-
-.trend-item {
-	width: calc(50% - 1px);
-	height: 247px;
-}
-
-.trend-item:nth-child(2n+1) {
-	margin-left: 0;
-}
-
-.trend-item:nth-child(2n+2) {
-	margin-left: 2px;
-}
-
-.trend-item:nth-child(n+3) {
-	margin-top: 2px;
-}
-
-.trend-content {
-	width: 100%;
-	max-width: 290px;
-	padding: 30px 20px;
-}
-
-.trend-item-title {
-	font-size: 16px;
-	line-height: 20px;
-}
-}*/
